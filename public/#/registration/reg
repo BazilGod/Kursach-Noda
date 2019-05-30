@@ -1,0 +1,66 @@
+
+
+           
+
+           
+        
+            class UserForm extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {value: props.value};                    
+                    this.handleRegistrate = this.handleRegistrate.bind(this);
+                    this.validate = this.validate.bind(this);
+                    this.getForm = this.getForm.bind(this);
+                }
+                getForm(){
+                    return {
+                        name: this.refs.nameField.state.value,
+                        surname: this.refs.surnameField.state.value,
+                        login: this.refs.login.state.value,
+                        password: this.refs.pass.state.value
+                    }
+                }
+                handleRegistrate() {
+                    if(this.validate())
+                        alert('non corect data')
+                    else{
+                        let val = this.getForm();
+                        console.log(val);
+                        this.setState({value: val});
+                        axios.post('http://localhost:3000/registration', this.state.value)
+                            .then((response) => {
+                                alert('ok');
+                                //window.location.replace("http://localhost:3000/login-page.html");
+                            })
+                            .catch((error) => {
+                                alert(error);
+                            })
+                    }
+                }
+                validate(){
+                    if(this.refs.nameField.state.valid && this.refs.surnameField.state.valid &&
+                       this.refs.login.state.valid && 
+                       this.refs.pass.state.valid && this.refs.pass2.state.valid)
+                        return false;
+                    else
+                        return true;
+                }
+            
+                render() {
+                    return (
+                        <form>
+                            <TextField value="dima" ref="nameField" holder="Name"/>
+                            <TextField value="kot" ref="surnameField" holder="Surname"/>
+                            <TextField value="kot" ref="login" holder="Login"/>
+                            <PasswordField value="qwQW12!@" ref="pass"/>
+                            <RepeatingPasswordField value="qwQW12!@" ref="pass2"/>
+                            <input type="button" onClick={this.handleRegistrate} value="registrate" />
+                        </form>
+                    );
+                }
+            }
+            ReactDOM.render(
+                <UserForm />,
+                document.getElementById("app")
+            )
+        </script>
