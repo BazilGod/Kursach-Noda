@@ -43,7 +43,7 @@ class AuthenticationController extends CrudController{
             const token = jwt.sign({
                 'login': user.login
             }, 
-            'zemla4ok',
+            'bazel',
             {
                 expiresIn: 60*60    
             });
