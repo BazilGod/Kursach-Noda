@@ -67,7 +67,7 @@ module.exports = (db, config) => {
     });
 
     app.get('/', (req, res) => {
-        res.redirect('http://localhost:3000/main/im');
+        res.redirect('http://https://app-kursach.herokuapp.com/main/im');
     })
 
     app.get('/help', (req, res) => {
@@ -76,7 +76,7 @@ module.exports = (db, config) => {
 
     app.post('/logout', (req, res) => {
         res.cookie('__service_token', '');
-        res.redirect('http://localhost:3000/login');
+        res.redirect('http://https://app-kursach.herokuapp.com/login');
     })
 
     app.use('/api/v1', apiController);
