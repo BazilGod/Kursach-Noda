@@ -18,7 +18,8 @@ class LoginForm extends React.Component {
             password: this.refs.pass.state.value
         }
     }
-    handleAuth() {
+    handleAuth(event) {
+    event.preventDefault()
         let val = this.getForm();
         axios.post('https://app-kursach.herokuapp.com/login', val)
             .then((response) => {
