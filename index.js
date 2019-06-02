@@ -1,7 +1,7 @@
 'use strict';
 
 const Sequelize = require('sequelize');
-const config = require('./config_m');
+const config = require('./config_p');
 const db = require('./context')(Sequelize, config);
 const server = require('./server')(db, config);
 const port = process.env.PORT || 3000;
