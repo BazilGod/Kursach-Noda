@@ -27,10 +27,10 @@
                         let val = this.getForm();
                         console.log(val);
                         this.setState({value: val});
-                        axios.post('http://localhost:3000/registration', this.state.value)
+                        axios.post('https://app-kursach.herokuapp.com/registration', this.state.value)
                             .then((response) => {
                                 alert('ok');
-                                //window.location.replace("http://localhost:3000/login-page.html");
+                                //window.location.replace("https://app-kursach.herokuapp.com/login-page.html");
                             })
                             .catch((error) => {
                                 alert(error);

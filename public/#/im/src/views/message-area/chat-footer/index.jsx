@@ -18,7 +18,7 @@ class ChatFooter extends React.Component{
 
     onClickHandler(){
         const text = document.getElementById("message-text").value;
-        axios.post(`http://localhost:3000/api/v1/users/${this.props.userId}/chats/${this.props.chat.id}/messages`,{text:text})
+        axios.post(`https://app-kursach.herokuapp.com/api/v1/users/${this.props.userId}/chats/${this.props.chat.id}/messages`,{text:text})
             .then(this.onCompleteSend);
     }
 

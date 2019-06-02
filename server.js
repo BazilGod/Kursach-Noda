@@ -50,20 +50,20 @@ module.exports = (db, config) => {
     app.use('/', registration);
     app.use('/api/', authorisationController.ability());
 
-    app.use(express.static(__dirname + '/public/images'));
-    app.use(express.static(__dirname + '/public/styles'));
-    app.use(express.static(__dirname + '/public/scripts'));
+    app.use(express.static('https://app-kursach.herokuapp.com/public/images'));
+    app.use(express.static('https://app-kursach.herokuapp.com/public/styles'));
+    app.use(express.static('https://app-kursach.herokuapp.com/public/scripts'));
 
     app.get('/main/im', (req, res) => {        
-        res.sendFile(__dirname + '/public/pages/im.html');
+        res.sendFile('https://app-kursach.herokuapp.com/public/pages/im.html');
     });
 
     app.get('/login', (req, res) => {
-        res.sendFile(__dirname + '/public/pages/login-page.html');
+        res.sendFile('https://app-kursach.herokuapp.com/public/pages/login-page.html');
     });
     
     app.get('/registration', (req, res) => {
-        res.sendFile(__dirname + '/public/pages/registration-page.html');
+        res.sendFile('https://app-kursach.herokuapp.com/public/pages/registration-page.html');
     });
 
     app.get('/', (req, res) => {
@@ -71,7 +71,7 @@ module.exports = (db, config) => {
     })
 
     app.get('/help', (req, res) => {
-        res.sendFile(__dirname + '/public/pages/index.html');        
+        res.sendFile('https://app-kursach.herokuapp.com/public/pages/index.html');        
     })
 
     app.post('/logout', (req, res) => {

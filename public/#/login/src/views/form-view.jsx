@@ -20,9 +20,9 @@ class LoginForm extends React.Component {
     }
     handleAuth() {
         let val = this.getForm();
-        axios.post('http://localhost:3000/login', val)
+        axios.post('https://app-kursach.herokuapp.com/login', val)
             .then((response) => {
-                window.location = `http://localhost:3000/main/im?login=${val.login}&id=${response.data.userId}`;
+                window.location = `https://app-kursach.herokuapp.com/main/im?login=${val.login}&id=${response.data.userId}`;
             })
             .catch((error) => {
                 alert('error credentials');
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
                 <input type="button" onClick={this.handleAuth} value="LOG IN" />                
             </form>
             <RedirectButton/>
-            <a href='http://localhost:3000/help'>api</a>
+            <a href='https://app-kursach.herokuapp.com/help'>api</a>
             </div>
         );
     }

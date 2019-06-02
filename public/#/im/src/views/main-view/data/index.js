@@ -24,7 +24,7 @@ class DataStore {
     }
 
     fetchMessages(){
-        axios.get(`http://localhost:3000/api/v1/users/${this.userId}/chats/${this.chat.id}/messages`)
+        axios.get(`https://app-kursach.herokuapp.com/api/v1/users/${this.userId}/chats/${this.chat.id}/messages`)
             .then(this.onCompleteFetchMessages);
     }
 

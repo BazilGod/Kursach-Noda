@@ -4,8 +4,11 @@
     "\\controllers",
     "\\global-controllers",
     "\\models",
-    "\\public"
+    "\\public",
+    "\\public\\#",
+    "\\public\\#\\im",
+    "\\public\\pages"
   ],
-  "SelectedNode": "\\controllers",
+  "SelectedNode": "\\public\\pages\\index.html",
   "PreviewInSolutionExplorer": false
 }

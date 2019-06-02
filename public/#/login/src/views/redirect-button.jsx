@@ -8,7 +8,7 @@ class RedirectButton extends React.Component{
     }
 
     onClickHandler(){
-        document.location = 'http://localhost:3000/registration';
+        document.location = 'https://app-kursach.herokuapp.com/registration';
     }
 
     render(){

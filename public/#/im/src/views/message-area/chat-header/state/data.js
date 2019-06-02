@@ -14,7 +14,7 @@ class ChatHeaderDataState{
     }
 
     fetchUserInfo(userLogin){
-        axios.get(`http://localhost:3000/api/v1/users/${userLogin}`)
+        axios.get(`https://app-kursach.herokuapp.com/api/v1/users/${userLogin}`)
             .then(this.onFetchUserInfo);
     }
 
@@ -24,7 +24,7 @@ class ChatHeaderDataState{
     }
 
     onAddUserToChat(newUserLogin, userId, chatId){
-        axios.post(`http://localhost:3000/api/v1/users/${userId}/chats/${chatId}/adding/${newUserLogin}`)
+        axios.post(`https://app-kursach.herokuapp.com/api/v1/users/${userId}/chats/${chatId}/adding/${newUserLogin}`)
             .then(() => alert('user added to chat'))
             .catch(() => alert('error'));
     }

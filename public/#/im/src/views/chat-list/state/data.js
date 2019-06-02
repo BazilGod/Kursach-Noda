@@ -25,12 +25,12 @@ class DataStore {
 
     fetchChats(){
         this.setIsLoaded(false);
-        axios.get(`http://localhost:3000/api/v1/users/${this.userId}/chats`)
+        axios.get(`https://app-kursach.herokuapp.com/api/v1/users/${this.userId}/chats`)
             .then(this.onCompleteFetch)
     }
 
     addChat(chatName){
-        axios.post(`http://localhost:3000/api/v1/users/${this.userId}/chats`, {name: chatName })
+        axios.post(`https://app-kursach.herokuapp.com/api/v1/users/${this.userId}/chats`, {name: chatName })
             .then(this.onCompleteAdd)
     }
 

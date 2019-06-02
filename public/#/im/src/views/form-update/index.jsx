@@ -34,7 +34,7 @@ export default class FormView extends React.Component {
     onInfoUpdateHandler(){
         if(this.refs.nameField.state.valid && this.refs.surnameField.state.valid){
             const data = this.getFormUpdate();
-            axios.put(`http://localhost:3000/api/v1/users/${this.state.name}`, data)
+            axios.put(`https://app-kursach.herokuapp.com/api/v1/users/${this.state.name}`, data)
                 .then(result => alert('Successfully updated'));
         }
         else
@@ -45,7 +45,7 @@ export default class FormView extends React.Component {
         if(this.refs.pass.state.valid && this.refs.pass2.state.valid &&
             this.refs.pass.state.valid === this.refs.pass2.state.valid){
             const data = this.getFormUpdatePass();
-            axios.put(`http://localhost:3000/api/v1/users/${this.state.name}`, data)
+            axios.put(`https://app-kursach.herokuapp.com/api/v1/users/${this.state.name}`, data)
                 .then(result => alert('Successfully updated'));
         }
         else

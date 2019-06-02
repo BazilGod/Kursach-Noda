@@ -21,8 +21,8 @@ class Header extends React.Component{
     }
 
     onLogOutHandler(){
-        axios.post('http://localhost:3000/logout')
-            .then(() => document.location = "http://localhost:3000/login")
+        axios.post('https://app-kursach.herokuapp.com/logout')
+            .then(() => document.location = "https://app-kursach.herokuapp.com/login")
     }
 
     onClickHandler(){

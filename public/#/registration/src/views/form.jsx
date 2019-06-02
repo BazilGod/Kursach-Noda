@@ -28,10 +28,10 @@ export default class FormView extends React.Component {
             alert('non corect data')
         else{
             let val = this.getForm();
-            axios.post('http://localhost:3000/registration', val)
+            axios.post('https://app-kursach.herokuapp.com/registration', val)
                 .then(res => {
                     alert('ok')
-                    window.location= 'http://localhost:3000/login';
+                    window.location= 'https://app-kursach.herokuapp.com/login';
                 })
                 .catch(err => {
                     alert('this login is used');

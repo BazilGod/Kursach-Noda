@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 function verifyToken(token){
     try{
-        const user = jwt.verify(token, 'zemla4ok');
+        const user = jwt.verify(token, 'bazil');
 
         return user;
     }
